@@ -1,19 +1,33 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
 import Character from './Character'
 import { Card } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
 import axios from 'axios'
 
 export default function CardGallery() {
+    const [characters, setCharacters] = useState([])
+    
     useEffect(() =>{
         axios.get('https://swapi.co/api/people/')
          .then(res => {
-            console.log(res)
+            setCharacters(res.data.results)
          })
+         .catch(err=> {console.log(err)})
     },[])
+    console.log (characters)
     return (
     <Card.Group>
-        <Character/>
+        {characters.map(char =>(
+           <Character 
+           charName={char.name} 
+           charGender={char.gender} 
+           charHeight={char.height} 
+           charWeight={char.mass} 
+           charSpecies={char.species}
+           charHomeWorld={char.homeworld}
+           /> 
+        ))}
+        
     </Card.Group>
 
     )
