@@ -14,7 +14,6 @@ export default function CardGallery() {
          })
          .catch(err=> {console.log(err)})
     },[])
-    console.log (characters)
     return (
     <Card.Group>
         {characters.map(char =>(

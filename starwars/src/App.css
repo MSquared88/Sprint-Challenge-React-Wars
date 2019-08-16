@@ -15,7 +15,7 @@ h1:first-child {
   justify-content: center;
 }
 .ui.card{
-  width: 25% !important;
+  width: 480px !important;
   opacity: .8;
 }
 .ui.card>.content, .ui.cards>.card>.content {

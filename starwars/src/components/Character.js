@@ -32,7 +32,7 @@ import axios from 'axios'
             <Card.Meta>Weight: {props.charWeight}</Card.Meta>
             
             <Card.Description>
-            {props.charName} is a {species} and is from {home}
+            {props.charName} is a {species} from {home}.
             </Card.Description>
         </Card.Content>
     </Card>
